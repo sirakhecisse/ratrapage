@@ -1,0 +1,31 @@
+type Event {
+    id: ID!
+    name: String!
+    description: String!
+    location: String!
+    speaker: String
+    capacity: Int!
+    registrations: [Inscription!]!
+}
+
+
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+}
+
+type Inscription {
+    id: ID!
+    event: Event!
+    user: User!
+    status: RegistrationStatus!
+}
+
+enum RegistrationStatus {
+    PENDING
+    CONFIRMED
+    CANCELED
+}
